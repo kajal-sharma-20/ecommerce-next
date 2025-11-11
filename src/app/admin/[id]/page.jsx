@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import axios from "axios";
 import { Package, Users, Info, ShoppingCart } from "lucide-react";
+import Cookies from "js-cookie";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -18,6 +19,22 @@ export default function DashboardPage() {
     totalRequests: 0,
   });
 
+ //  Save token from URL to cookie and remove it from URL
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    const token = url.searchParams.get("token");
+
+    if (token) {
+      // Save in cookie (expires in 7 days, secure if using HTTPS)
+      Cookies.set("token", token, { expires: 2, secure: true, sameSite: "strict" });
+
+      // Remove token from URL
+      url.searchParams.delete("token");
+      window.history.replaceState({}, document.title, url.toString());
+    }
+  }, []);
+
+  
   // Fetch dashboard stats from backend
   useEffect(() => {
     const fetchData = async () => {
