@@ -55,7 +55,7 @@ export default function Login() {
         if (res.status === 200) {
           toast.success("OTP verified successfully!");
           const { userId } = res.data;
-          router.push(`/admin/${userId}`);
+          window.location.href = `/admin/${userId}`
           return;
         }
       }
