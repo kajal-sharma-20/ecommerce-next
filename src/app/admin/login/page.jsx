@@ -69,7 +69,7 @@ export default function Login() {
 
   const handleResend = async () => {
     if (!canResend()) {
-      toast.info("Please wait 30 seconds before resending OTP.");
+      toast.info("Please wait for 30 seconds before resending OTP.");
       return;
     }
     try {
