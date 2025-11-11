@@ -6,13 +6,16 @@ import { LayoutDashboard, Users, Package as PackageIcon, Plus, UserCircle, LogOu
 import { toast } from "react-toastify";
 import axios from 'axios';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 
 export default function Sidebar() {
   const pathname = usePathname();
   const { id } = useParams();
   const [isOpen, setIsOpen] = useState(false); // for mobile sidebar toggle
+  const router=useRouter()
 
   const menuItems = [
     { href: `/admin/${id}`, label: 'Dashboard', icon: LayoutDashboard },
@@ -29,7 +32,7 @@ export default function Sidebar() {
       const res = await axios.post(`${API_URL}/logout`, {}, { withCredentials: true });
       if (res.status === 200) {
         toast.success("Logged out successfully!");
-        window.location.href = "https://ecommerce-react-three-psi.vercel.app";
+        router.push("/")
       }
     } catch (err) {
       toast.error("Error logging out");

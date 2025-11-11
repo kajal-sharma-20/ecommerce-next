@@ -1,5 +1,13 @@
-import { redirect } from "next/navigation";
 
-export default function Home() {
-  redirect("/admin/28"); 
+import React from 'react';
+import Login from './admin/[id]/login/page';
+
+function page() {
+  return (
+    <div>
+      <Login />
+    </div>
+  );
 }
+
+export default page;
