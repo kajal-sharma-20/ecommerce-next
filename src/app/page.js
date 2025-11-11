@@ -1,6 +1,7 @@
 
 import React from 'react';
-import Login from './admin/[id]/login/page';
+import Login from './admin/login/page';
+
 
 function page() {
   return (
