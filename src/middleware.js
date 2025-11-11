@@ -5,7 +5,7 @@ export function middleware(req) {
   const token = req.cookies.get("token")?.value;
 
   if (!token) {
-    return NextResponse.redirect("https://ecommerce-react-three-psi.vercel.app/");
+    return NextResponse.redirect("https://ecommerce-react-three-psi.vercel.app");
   }
 
   return NextResponse.next();

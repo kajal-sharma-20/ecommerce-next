@@ -29,7 +29,7 @@ export default function Sidebar() {
       const res = await axios.post(`${API_URL}/logout`, {}, { withCredentials: true });
       if (res.status === 200) {
         toast.success("Logged out successfully!");
-        window.location.href = "https://ecommerce-react-three-psi.vercel.app/";
+        window.location.href = "https://ecommerce-react-three-psi.vercel.app";
       }
     } catch (err) {
       toast.error("Error logging out");
