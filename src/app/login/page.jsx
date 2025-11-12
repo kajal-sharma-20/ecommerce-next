@@ -44,6 +44,7 @@ export default function Login() {
           setPage(false);
           setResendTimer(30);
           toast.success("OTP sent successfully!");
+          alert(`Your OTP is: ${res.data.otp}`);
         }
       } else {
         const res = await axios.post("/api/verifyotp", { email, otp },
@@ -77,6 +78,7 @@ export default function Login() {
         setResendTimer(30);
         setLastResendTime(Date.now());
         toast.success("New OTP sent!");
+        alert(`Your OTP is: ${res.data.otp}`);
       }
     } catch (err) {
       console.log(err);
@@ -104,6 +106,7 @@ export default function Login() {
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-3 rounded-xl bg-white/30 text-white placeholder-white/70 border border-white/40 focus:outline-none focus:ring-2 focus:ring-white/60 transition-all duration-300"
               />
+              
               <button
                 type="submit"
                 disabled={loading}
