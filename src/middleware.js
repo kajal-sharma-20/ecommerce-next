@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 
 export function middleware(req) {
   const url = req.nextUrl.clone();
+  console.log("req data",req.cookies);
+    console.log("req 111111",req);
+
 
   // Protect only admin routes
   if (url.pathname.startsWith("/admin")) {
