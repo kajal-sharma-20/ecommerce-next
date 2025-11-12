@@ -6,9 +6,11 @@ export function middleware(req) {
   // Protect only admin routes
   if (url.pathname.startsWith("/admin")) {
     const token = req.cookies.get("token")?.value;
+    console.log(token,"token of middle ware ")
 
     // If no token, redirect to login page
     if (!token) {
+        console.log("no token ")
       url.pathname = "/";
       return NextResponse.redirect(url);
     }
