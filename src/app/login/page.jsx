@@ -46,11 +46,8 @@ export default function Login() {
           toast.success("OTP sent successfully!");
         }
       } else {
-        const res = await axios.post(
-          `${API_URL}/verifyotp`,
-          { email, otp },
-          { withCredentials: true }
-        );
+        const res = await axios.post("/api/verifyotp", { email, otp },
+          { withCredentials: true });
 
         if (res.status === 200) {
           toast.success("OTP verified successfully!");
