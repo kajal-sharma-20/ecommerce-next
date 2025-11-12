@@ -184,11 +184,11 @@ export default function ProductsPage() {
                       />
                     </div>
                   </td>
-                  <td className="px-6 py-4 font-semibold">{p.name}</td>
+                  <td className="px-6 py-4 font-bold text-gray-600">{p.name}</td>
                   <td className="px-6 py-4 text-sm text-gray-600">{p.description}</td>
-                  <td className="px-6 py-4">{p.category}</td>
+                  <td className="px-6 py-4 text-sm text-gray-600">{p.category}</td>
                   <td className="px-6 py-4 font-bold text-green-600">₹{p.price}</td>
-                  <td className="px-6 py-4">{p.stock} units</td>
+                  <td className="px-6 py-4 text-sm text-gray-600">{p.stock} units</td>
                   <td className="px-6 py-4">
                     <div className="flex gap-2">
                       <button
@@ -246,7 +246,7 @@ export default function ProductsPage() {
       {/* Edit Modal */}
       {isModalOpen && selectedProduct && (
         <div className="fixed inset-0 bg-white/30 backdrop-blur-md flex justify-center items-center z-50 overflow-y-auto">
-          <div className="bg-white rounded-2xl p-6 w-[90%] max-w-[500px] my-10 shadow-2xl relative animate-fadeIn">
+          <div className="text-gray-600 rounded-2xl p-6 w-[90%] max-w-[500px] my-10 shadow-2xl relative animate-fadeIn">
             <button
               className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
               onClick={() => setIsModalOpen(false)}
