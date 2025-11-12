@@ -150,11 +150,11 @@ export default function Orders() {
                       {order.userEmail}
                     </div>
                   </td>
-                  <td className="px-6 py-4 font-semibold">
+                  <td className="px-6 py-4 font-semibold text-gray-800">
                     ₹{order.payableAmount}
                   </td>
-                  <td className="px-6 py-4">{order.paymentMethod}</td>
-                  <td className="px-6 py-4">
+                  <td className="px-6 py-4 text-gray-800">{order.paymentMethod}</td>
+                  <td className="px-6 py-4 text-gray-800">
                     {order.paymentMethod === "COD" ? (
                       <select
                         value={order.status}
@@ -184,7 +184,7 @@ export default function Orders() {
                       </span>
                     )}
                   </td>
-                  <td className="px-6 py-4 text-center">
+                  <td className="px-6 py-4 text-center text-gray-800">
                     <select
                      disabled={updatingOrderId === order.orderId}
                       value={order.deliveryStatus}

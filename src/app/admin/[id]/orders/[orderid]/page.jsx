@@ -84,13 +84,13 @@ export default function OrderDetailsPage() {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Left: Customer Info */}
           <div className="space-y-3">
-            <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Customer Details</h2>
-            <p><strong>Name:</strong> {order.customerName}</p>
-            <p><strong>Email:</strong> {order.customerEmail}</p>
-            <p><strong>Phone:</strong> {order.customerPhone}</p>
-            <p><strong>Shipping Address:</strong> {order.shippingAddress}</p>
-            <p><strong>Payment Method:</strong> {order.paymentMethod}</p>
-            <p>
+            <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">Customer Details</h2>
+            <p className="text-gray-800"><strong>Name:</strong> {order.customerName}</p>
+            <p className="text-gray-800"><strong>Email:</strong> {order.customerEmail}</p>
+            <p className="text-gray-800"><strong>Phone:</strong> {order.customerPhone}</p>
+            <p className="text-gray-800"><strong>Shipping Address:</strong> {order.shippingAddress}</p>
+            <p className="text-gray-800"><strong>Payment Method:</strong> {order.paymentMethod}</p>
+            <p className="text-gray-800">
               <strong>Status:</strong>{" "}
               <span
                 className={`${
@@ -104,15 +104,15 @@ export default function OrderDetailsPage() {
                 {order.status}
               </span>
             </p>
-            <p><strong>Order Date:</strong> {new Date(order.createdAt).toLocaleString()}</p>
+            <p className="text-gray-800"><strong>Order Date:</strong> {new Date(order.createdAt).toLocaleString()}</p>
           </div>
 
           {/* Right: Order Summary */}
           <div className="space-y-3">
-            <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Order Summary</h2>
-            <p><strong>Total Amount:</strong> ₹{order.totalAmount}</p>
-            <p><strong>Discount:</strong> ₹{order.discount}</p>
-            <p><strong>Delivery Fee:</strong> ₹{order.deliveryFee}</p>
+            <h2 className="text-2xl font-semibold mb-4 border-b pb-2 text-gray-800">Order Summary</h2>
+            <p className="text-gray-800"><strong>Total Amount:</strong> ₹{order.totalAmount}</p>
+            <p className="text-gray-800"><strong>Discount:</strong> ₹{order.discount}</p>
+            <p className="text-gray-800"><strong>Delivery Fee:</strong> ₹{order.deliveryFee}</p>
             <p className="text-lg font-bold text-green-600">
               <strong>Payable Amount:</strong> ₹{order.payableAmount}
             </p>
