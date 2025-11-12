@@ -139,7 +139,7 @@ export default function CreateProductPage() {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-purple-500"
+              className="w-full px-4 py-3 rounded-xl text-gray-700 border border-gray-200 focus:ring-2 focus:ring-purple-500"
               placeholder="Enter product name"
             />
           </div>
@@ -154,7 +154,7 @@ export default function CreateProductPage() {
               value={formData.description}
               onChange={handleChange}
               rows={4}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-purple-500"
+              className="w-full px-4 py-3 rounded-xl text-gray-700 border border-gray-200 focus:ring-2 focus:ring-purple-500"
               placeholder="Enter product description"
             />
           </div>
@@ -172,7 +172,7 @@ export default function CreateProductPage() {
                 value={formData.price}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-3 rounded-xl text-gray-700 border border-gray-200 focus:ring-2 focus:ring-purple-500"
                 placeholder="0.00"
               />
             </div>
@@ -188,7 +188,7 @@ export default function CreateProductPage() {
                 value={formData.stock}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-purple-500"
+                className="w-full px-4 py-3 rounded-xl border text-gray-700 border-gray-200 focus:ring-2 focus:ring-purple-500"
                 placeholder="0"
               />
             </div>
@@ -202,7 +202,7 @@ export default function CreateProductPage() {
                 name="category"
                 value={formData.category}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-purple-500 mb-2"
+                className="w-full px-4 py-3 rounded-xl border text-gray-700 border-gray-200 focus:ring-2 focus:ring-purple-500 mb-2"
               >
                 <option value="">Select</option>
                 {categories.map((cat, idx) => (
@@ -219,7 +219,7 @@ export default function CreateProductPage() {
                   value={newCategory}
                   onChange={(e) => setNewCategory(e.target.value)}
                   placeholder="Add new category"
-                  className="w-full px-2 py-2 pr-20 border border-gray-300 rounded-lg"
+                  className="w-full px-2 py-2 pr-20 border text-gray-700 border-gray-300 rounded-lg"
                 />
                 <button
                   type="button"
@@ -251,7 +251,7 @@ export default function CreateProductPage() {
               type="file"
               accept="image/*"
               onChange={handleMainImageChange}
-              className="w-full border border-gray-200 rounded-xl px-4 py-3"
+              className="w-full border text-gray-700 border-gray-200 rounded-xl px-4 py-3"
             />
             {mainImage && (
               <div className="w-24 h-24 mt-3 rounded-xl overflow-hidden border border-gray-300 shadow-sm">
@@ -274,7 +274,7 @@ export default function CreateProductPage() {
               accept="image/*"
               multiple
               onChange={handleOtherImagesChange}
-              className="w-full border border-gray-200 rounded-xl px-4 py-3"
+              className="w-full border text-gray-700 border-gray-200 rounded-xl px-4 py-3"
             />
 
             {otherImages.length > 0 && (
