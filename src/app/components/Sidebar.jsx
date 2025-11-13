@@ -29,11 +29,9 @@ export default function Sidebar() {
 
   const handleLogout = async () => {
     try {
-      const res = await axios.post(`${API_URL}/logout`, {}, { withCredentials: true });
-      if (res.status === 200) {
+      await axios.post("/api/logout", {}, { withCredentials: true });
         toast.success("Logged out successfully!");
         router.push("/")
-      }
     } catch (err) {
       toast.error("Error logging out");
     }
