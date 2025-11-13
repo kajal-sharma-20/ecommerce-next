@@ -29,11 +29,10 @@ export default function Sidebar() {
 
   const handleLogout = async () => {
     try {
-      const res = await axios.post(`${API_URL}/logout`, {}, { withCredentials: true });
-      if (res.status === 200) {
+      // clear cookie on frontend
+    document.cookie = "token=; path=/; max-age=0; secure; samesite=None";
         toast.success("Logged out successfully!");
         router.push("/")
-      }
     } catch (err) {
       toast.error("Error logging out");
     }
